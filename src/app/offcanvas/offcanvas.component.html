@@ -1,0 +1,94 @@
+<div class="container">
+  <div
+    class="d-flex justify-content-center text-center align-items-center h-100 w-100"
+  >
+    <button
+      class="btn btn-primary btn-block"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasDataMigration"
+      aria-controls="offcanvasDataMigration"
+      (click)="showOffCanvas = true"
+    >
+      Start
+    </button>
+  </div>
+
+  <div
+    class="offcanvas offcanvas-bottom"
+    tabindex="-1"
+    id="offcanvasDataMigration"
+    [style.display]="showOffCanvas ? 'inherit' : 'none'"
+    aria-labelledby="dataMigrationOffCanvas"
+  >
+    <div class="offcanvas-close d-flex justify-content-end">
+      <button
+        class="hide-button fs-5 p-1 rounded-1"
+        (click)="showOffCanvasBody = !showOffCanvasBody"
+        aria-label="Close"
+      >
+        <i class="bi bi-caret-down-fill text-reset"></i>
+      </button>
+    </div>
+    @if(showOffCanvasBody){
+    <div class="h-100">
+      <div
+        id="off-canvas-body"
+        [style.display]="showOffCanvasBody ? '' : 'none'"
+        class="h-100"
+      >
+        <div class="row h-100">
+          <div
+            class="col-6 rocket-icon h-100 fs-1 d-flex justify-content-center align-items-center"
+          >
+            <i class="bi bi-rocket-fill"></i>
+          </div>
+          <div class="col-8 gap-2 ml-auto p-5">
+            <div class="d-flex justify-content-between">
+              <p>Migrating Data to selected environment.</p>
+              <p>{{ fileUploadPercentage }}%</p>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                [style.width]="fileUploadPercentage + '%'"
+                [attr.aria-valuenow]="fileUploadPercentage"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div
+      id="liveToast"
+      class="toast hide success-toast"
+      role="alert"
+      aria-live="assertive"
+      [attr.aria-atomic]="true"
+    >
+      <div class="toast-header d-flex justify-content-end">
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="toast-body">
+        <div class="d-flex gap-2 align-items-center">
+          <i class="bi bi-check2 fw-bold fs-4"></i>
+          <div class="">
+            <h6 class="fw-bold">Success!</h6>
+            <p>Migrated applied successfully.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

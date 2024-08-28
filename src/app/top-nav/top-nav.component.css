@@ -1,0 +1,19 @@
+.logo{
+ width:7rem;
+ height:7rem;
+}
+.profile{
+    width:2.2rem;
+    height:2.2rem;
+}
+.profile-border{
+    border:2px solid rgb(224,224,224);
+    offset: 2px solid rgb(224,224,224);
+}
+.bi-bell{
+    vertical-align: bottom !important;
+}
+.primary-icons{
+    background-color:rgb(13,110,253);
+    color: #fff;
+}

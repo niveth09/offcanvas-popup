@@ -1,0 +1,43 @@
+.rocket-icon,.hide-button{
+    background-color:rgb(21,92,254);
+    color:white;
+    border:none;
+    width:5rem;
+}
+
+.offcanvas-size-xl {
+    --bs-offcanvas-width: min(95vw, 600px) !important;
+}
+.offcanvas-size-xxl {
+    --bs-offcanvas-width: min(95vw, 90vw) !important;
+}
+.offcanvas-size-md {
+    --bs-offcanvas-width: min(95vw, 400px) !important;
+}
+.offcanvas-size-sm {
+    --bs-offcanvas-width: min(95vw, 250px) !important;
+}
+.offcanvas{
+    border:none;
+    outline: none;
+}
+.offcanvas-close{
+    background: rgba(0,0,0,0.5);
+    
+}
+
+.btn-close{
+    cursor: pointer;
+    color: #fff;
+}
+.progress-bar{
+    animation-delay: 10s;
+}
+
+.success-toast,.toast-header {
+    background-color: rgb(80,162,80);
+    color: #fff;
+    border:none;
+    -webkit-animation: disappearAnimation 5s forwards; 
+    animation: disappearAnimation 5s forwards;
+}
